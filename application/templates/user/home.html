@@ -1,0 +1,14 @@
+{% extends "../base.html" %}
+
+{% block title %}BeBeBe Dashboard{% endblock %}
+
+{% block content %}
+        <h1>你是:{{ user.email }}</h1>
+
+        <h2>最近查過的單字</h2>
+        <ol>
+        {% for voca in vocabularies %}
+           <li>{{voca.word}} ({{voca.count}}/{{voca.searched_total}})</li> 
+        {% endfor %}
+        </ol>
+{% endblock %}
